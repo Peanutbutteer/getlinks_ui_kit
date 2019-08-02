@@ -1,0 +1,23 @@
+name: getlinks_ui_kit
+description: A new Flutter package project.
+version: 0.0.1
+author:
+homepage:
+
+environment:
+  sdk: ">=2.2.2 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  numberpicker: ^1.0.0
+  flutter_spinkit: ^3.1.0
+  webview_flutter: ^0.3.9+1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  assets:
+  - assets/images/
