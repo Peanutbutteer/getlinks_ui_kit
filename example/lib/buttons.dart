@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:getlinks_ui_kit/buttons/buttons.dart';
+import 'package:getlinks_ui_kit/buttons/gradient_button.dart';
 
 class Buttons extends StatelessWidget {
   @override
@@ -135,11 +136,26 @@ class Buttons extends StatelessWidget {
               'Button',
               onPressed: null,
             ),
+            SizedBox(height: 40),
+            Text('Gradient Button', style: Theme.of(context).textTheme.headline),
             SizedBox(height: 10),
-            Text(
-              'Social Button',
-              style: Theme.of(context).textTheme.headline,
+            GLGradientButton(
+              'Button',
+              onPressed: () {},
             ),
+            SizedBox(height: 10),
+            GLGradientButton(
+              'Button',
+              showLoading: true,
+              onPressed: () {},
+            ),
+            SizedBox(height: 10),
+            GLGradientButton(
+              'Button',
+              onPressed: null,
+            ),
+            SizedBox(height: 40),
+            Text('Social Button', style: Theme.of(context).textTheme.headline),
             SizedBox(height: 10),
             FbButton(
               loading: true,
