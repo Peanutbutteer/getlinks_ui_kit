@@ -52,7 +52,7 @@ class _GLSuperButtonState extends State<GLSuperButton> {
       },
       onTap: widget.onPressed,
       child: Container(
-        width: 160,
+        width: widget.expand ? double.infinity : 160,
         constraints: BoxConstraints(
           minHeight: buttonHeight,
         ),
