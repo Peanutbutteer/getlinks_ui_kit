@@ -53,7 +53,7 @@ class _GLPasswordTextFieldState extends State<GLPasswordTextField> {
       keyboardType: widget.keyboardType,
       enabled: widget.enable,
       style: TextStyle(color: GetLinksColors.gunmetal),
-      cursorColor: GetLinksColors.primary,
+      cursorColor: GetLinksColors.gunmetal,
       decoration: InputDecoration(
           errorText: widget.error,
           filled: widget.enable ? false : true,

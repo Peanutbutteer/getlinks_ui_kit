@@ -17,6 +17,7 @@ class GLTextField extends StatelessWidget {
     this.validator,
     this.labelText,
     this.maxlines = 1,
+    this.error,
   });
 
   final bool obscureText;
@@ -32,54 +33,58 @@ class GLTextField extends StatelessWidget {
   final bool enable;
   final String labelText;
   final int maxlines;
+  final String error;
 
   @override
   Widget build(BuildContext context) {
-    return Theme(
-      data: Theme.of(context).copyWith(
-        
-      ),
-      child: TextFormField(
-        key: fieldKey,
-        obscureText: obscureText,
-        maxLines: maxlines,
-        controller: controller,
-        textInputAction: textInputAction,
-        focusNode: focusNode,
-        keyboardType: keyboardType,
-        enabled: enable,
-        style: TextStyle(color: GetLinksColors.gunmetal),
-        cursorColor: GetLinksColors.primary,
-        decoration: InputDecoration(
-          filled: enable ? false : true,
-          fillColor: Color(0x4DBABDC6),
-          contentPadding: const EdgeInsets.symmetric(
-            vertical: 15,
-            horizontal: 10,
-          ),
-          hintText: StringUtils.capitalize(hintText),
-          labelText:
-              labelText != null ? StringUtils.capitalize(labelText) : null,
-          hintStyle: TextStyle(color: GetLinksColors.silver300),
-          border: OutlineInputBorder(),
-          enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(width: 1, color: GetLinksColors.silver300),
-          ),
-          disabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(width: 1, color: GetLinksColors.mystic),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(width: 1, color: GetLinksColors.primary),
-          ),
+    return TextFormField(
+      key: fieldKey,
+      obscureText: obscureText,
+      maxLines: maxlines,
+      controller: controller,
+      textInputAction: textInputAction,
+      focusNode: focusNode,
+      keyboardType: keyboardType,
+      enabled: enable,
+      style: TextStyle(color: GetLinksColors.gunmetal),
+      cursorColor: GetLinksColors.gunmetal,
+      decoration: InputDecoration(
+        errorText: error,
+        filled: enable ? false : true,
+        fillColor: Color(0x4DBABDC6),
+        contentPadding: const EdgeInsets.symmetric(
+          vertical: 15,
+          horizontal: 10,
         ),
-        validator: validator,
-        onFieldSubmitted: (_) {
-          if (nextFocusNode != null) {
-            focusNode.unfocus();
-            FocusScope.of(context).requestFocus(nextFocusNode);
-          }
-        },
+        errorStyle: TextStyle(color: GetLinksColors.carnationColor),
+        labelStyle: enable ? null : TextStyle(color: GetLinksColors.silver300),
+        hintText: StringUtils.capitalize(hintText),
+        labelText: labelText != null ? StringUtils.capitalize(labelText) : null,
+        hintStyle: TextStyle(color: GetLinksColors.silver300),
+        border: OutlineInputBorder(),
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: GetLinksColors.silver300),
+        ),
+        disabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: GetLinksColors.mystic),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: GetLinksColors.primary),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: GetLinksColors.carnationColor),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: GetLinksColors.carnationColor),
+        ),
       ),
+      validator: validator,
+      onFieldSubmitted: (_) {
+        if (nextFocusNode != null) {
+          focusNode.unfocus();
+          FocusScope.of(context).requestFocus(nextFocusNode);
+        }
+      },
     );
   }
 }
