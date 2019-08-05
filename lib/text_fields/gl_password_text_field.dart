@@ -40,7 +40,7 @@ class GLPasswordTextField extends StatefulWidget {
 }
 
 class _GLPasswordTextFieldState extends State<GLPasswordTextField> {
-  bool passwordVisiblity = true;
+  bool passwordVisiblity = false;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
