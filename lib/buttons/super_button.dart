@@ -50,7 +50,7 @@ class _GLSuperButtonState extends State<GLSuperButton> {
           onHover = false;
         });
       },
-      onTap: widget.onPressed,
+      onTap: widget.showLoading ? null : widget.onPressed,
       child: Container(
         width: widget.expand ? double.infinity : 160,
         constraints: BoxConstraints(
@@ -64,16 +64,10 @@ class _GLSuperButtonState extends State<GLSuperButton> {
               Positioned.fill(
                 child: Container(
                   decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                        colors: widget.showLoading || !onHover
-                            ? <Color>[
-                                GetLinksColors.primary,
-                                GetLinksColors.primaryBlue,
-                              ]
-                            : <Color>[
-                                GetLinksColors.primaryBlue,
-                                GetLinksColors.primary,
-                              ]),
+                    gradient: LinearGradient(colors: <Color>[
+                      GetLinksColors.primaryBlue,
+                      GetLinksColors.primary,
+                    ]),
                   ),
                 ),
               ),

@@ -137,7 +137,8 @@ class Buttons extends StatelessWidget {
               onPressed: null,
             ),
             SizedBox(height: 40),
-            Text('Gradient Button', style: Theme.of(context).textTheme.headline),
+            Text('Gradient Button',
+                style: Theme.of(context).textTheme.headline),
             SizedBox(height: 10),
             GLGradientButton(
               'Button',
@@ -147,7 +148,9 @@ class Buttons extends StatelessWidget {
             GLGradientButton(
               'Button',
               showLoading: true,
-              onPressed: () {},
+              onPressed: () {
+                print('click');
+              },
             ),
             SizedBox(height: 10),
             GLGradientButton(

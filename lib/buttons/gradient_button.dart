@@ -50,7 +50,7 @@ class _GLGradientButtonState extends State<GLGradientButton> {
           onHover = false;
         });
       },
-      onTap: widget.onPressed,
+      onTap: widget.showLoading ? null : widget.onPressed,
       child: Container(
         width: widget.expand ? double.infinity : 160,
         constraints: BoxConstraints(
@@ -64,16 +64,10 @@ class _GLGradientButtonState extends State<GLGradientButton> {
               Positioned.fill(
                 child: Container(
                   decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                        colors: widget.showLoading || !onHover
-                            ? <Color>[
-                                GetLinksColors.primary,
-                                GetLinksColors.primaryBlue,
-                              ]
-                            : <Color>[
-                                GetLinksColors.primaryBlue,
-                                GetLinksColors.primary,
-                              ]),
+                    gradient: LinearGradient(colors: <Color>[
+                      GetLinksColors.primaryBlue,
+                      GetLinksColors.primary,
+                    ]),
                   ),
                 ),
               ),
