@@ -20,7 +20,7 @@ class GetLinksColors {
   static const Color successColor = Color(0xFF4AD991);
   static const Color yellowOrangeColor = Color(0xFFFFB900);
   static const Color carnationColor = Color(0xFFFF7285);
-
+  static const Color steelColor = Color(0xFF788796);
   
   static Color primaryMaterial = MaterialColor(primary.value, <int, Color>{
     50: const Color(0xFFE5FAF5),
