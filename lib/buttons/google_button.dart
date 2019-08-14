@@ -42,7 +42,7 @@ class GoogleButton extends StatelessWidget {
                     'Login with Google',
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontWeight: FontWeight.w500,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 )

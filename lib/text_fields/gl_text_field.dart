@@ -18,6 +18,7 @@ class GLTextField extends StatelessWidget {
     this.labelText,
     this.maxlines = 1,
     this.error,
+    this.isSucess = false,
   });
 
   final bool obscureText;
@@ -34,6 +35,7 @@ class GLTextField extends StatelessWidget {
   final String labelText;
   final int maxlines;
   final String error;
+  final bool isSucess;
 
   @override
   Widget build(BuildContext context) {
@@ -57,13 +59,15 @@ class GLTextField extends StatelessWidget {
           horizontal: 10,
         ),
         errorStyle: TextStyle(color: GetLinksColors.carnationColor),
-        labelStyle: enable ? null : TextStyle(color: GetLinksColors.silver300),
+        labelStyle: enable ? isSucess ? TextStyle(color: GetLinksColors.primary) : null : TextStyle(color: GetLinksColors.silver300),
         hintText: StringUtils.capitalize(hintText),
         labelText: labelText != null ? StringUtils.capitalize(labelText) : null,
         hintStyle: TextStyle(color: GetLinksColors.silver300),
         border: OutlineInputBorder(),
         enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: GetLinksColors.silver300),
+          borderSide: BorderSide(
+              color:
+                  isSucess ? GetLinksColors.primary : GetLinksColors.mystic),
         ),
         disabledBorder: OutlineInputBorder(
           borderSide: BorderSide(color: GetLinksColors.mystic),

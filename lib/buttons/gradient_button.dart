@@ -65,8 +65,8 @@ class _GLGradientButtonState extends State<GLGradientButton> {
                 child: Container(
                   decoration: BoxDecoration(
                     gradient: LinearGradient(colors: <Color>[
-                      GetLinksColors.primaryBlue,
                       GetLinksColors.primary,
+                      GetLinksColors.primaryBlue,
                     ]),
                   ),
                 ),
@@ -94,6 +94,7 @@ class _GLGradientButtonState extends State<GLGradientButton> {
                           ? GetLinksColors.silver300
                           : Colors.white,
                       fontSize: 18,
+                      fontWeight: FontWeight.bold
                     ),
                   ),
                 ),

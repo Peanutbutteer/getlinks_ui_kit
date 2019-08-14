@@ -25,6 +25,7 @@ class _TextFieldsState extends State<TextFields> {
                 height: 10,
               ),
               GLTextField(
+                isSucess: true,
                 labelText: 'label',
                 hintText: 'hint',
               ),

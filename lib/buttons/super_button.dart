@@ -65,8 +65,8 @@ class _GLSuperButtonState extends State<GLSuperButton> {
                 child: Container(
                   decoration: BoxDecoration(
                     gradient: LinearGradient(colors: <Color>[
-                      GetLinksColors.primaryBlue,
                       GetLinksColors.primary,
+                      GetLinksColors.primaryBlue,
                     ]),
                   ),
                 ),
@@ -94,6 +94,7 @@ class _GLSuperButtonState extends State<GLSuperButton> {
                           ? GetLinksColors.silver300
                           : Colors.white,
                       fontSize: 18,
+                      fontWeight: FontWeight.bold
                     ),
                   ),
                 ),

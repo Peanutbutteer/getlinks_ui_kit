@@ -83,7 +83,7 @@ class _GLPasswordTextFieldState extends State<GLPasswordTextField> {
           hintStyle: TextStyle(color: GetLinksColors.silver300),
           border: OutlineInputBorder(),
           enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: GetLinksColors.silver300),
+            borderSide: BorderSide(color: GetLinksColors.mystic),
           ),
           disabledBorder: OutlineInputBorder(
             borderSide: BorderSide(color: GetLinksColors.mystic),
