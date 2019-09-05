@@ -14,6 +14,7 @@ class GLButton extends StatelessWidget {
     this.expand = true,
     this.disabledColor = GetLinksColors.mystic,
     this.icon,
+    this.buttonWidth,
   });
 
   final String text;
@@ -23,6 +24,7 @@ class GLButton extends StatelessWidget {
   final bool expand;
   final Color disabledColor;
   final Icon icon;
+  final double buttonWidth;
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +44,7 @@ class GLButton extends StatelessWidget {
     return Container(
       height: buttonHeight,
       child: ButtonTheme(
-        minWidth: expand ? double.infinity : 64,
+        minWidth: expand ? double.infinity : buttonWidth!=null ? buttonWidth : 64,
         height: buttonHeight,
         child: icon == null || loading
             ? FlatButton(
