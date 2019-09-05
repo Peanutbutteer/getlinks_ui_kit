@@ -15,6 +15,7 @@ class GLButton extends StatelessWidget {
     this.disabledColor = GetLinksColors.mystic,
     this.icon,
     this.buttonWidth,
+    this.textStyle = const TextStyle(),
   });
 
   final String text;
@@ -25,6 +26,7 @@ class GLButton extends StatelessWidget {
   final Color disabledColor;
   final Icon icon;
   final double buttonWidth;
+  final TextStyle textStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +46,8 @@ class GLButton extends StatelessWidget {
     return Container(
       height: buttonHeight,
       child: ButtonTheme(
-        minWidth: expand ? double.infinity : buttonWidth!=null ? buttonWidth : 64,
+        minWidth:
+            expand ? double.infinity : buttonWidth != null ? buttonWidth : 64,
         height: buttonHeight,
         child: icon == null || loading
             ? FlatButton(
@@ -66,7 +69,10 @@ class GLButton extends StatelessWidget {
                           color: Colors.white,
                         ),
                       )
-                    : Text(StringUtils.capitalize(text)),
+                    : Text(
+                        StringUtils.capitalize(text),
+                        style: textStyle,
+                      ),
                 onPressed: loading ? null : onPressed,
               )
             : FlatButton.icon(
@@ -78,7 +84,10 @@ class GLButton extends StatelessWidget {
                 textColor: Colors.white,
                 disabledTextColor: GetLinksColors.silver300,
                 icon: icon,
-                label: Text(StringUtils.capitalize(text)),
+                label: Text(
+                  StringUtils.capitalize(text),
+                  style: textStyle,
+                ),
                 onPressed: onPressed,
               ),
       ),
