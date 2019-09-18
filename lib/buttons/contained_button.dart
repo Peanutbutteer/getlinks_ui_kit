@@ -13,6 +13,7 @@ class GLButton extends StatelessWidget {
     this.size = ButtonSize.normal,
     this.expand = true,
     this.disabledColor = GetLinksColors.mystic,
+    this.color = GetLinksColors.primary,
     this.icon,
     this.buttonWidth,
     this.textStyle = const TextStyle(),
@@ -24,6 +25,7 @@ class GLButton extends StatelessWidget {
   final ButtonSize size;
   final bool expand;
   final Color disabledColor;
+  final Color color;
   final Icon icon;
   final double buttonWidth;
   final TextStyle textStyle;
@@ -57,7 +59,7 @@ class GLButton extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8),
                 ),
-                color: GetLinksColors.primary,
+                color: color,
                 textColor: Colors.white,
                 disabledTextColor: GetLinksColors.silver300,
                 child: loading
